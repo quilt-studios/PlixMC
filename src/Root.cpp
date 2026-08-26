@@ -119,7 +119,7 @@ bool cRoot::Run(cSettingsRepositoryInterface & a_OverridesRepo)
 	LOG("--- Started Log ---");
 
 #ifdef BUILD_ID
-	LOG("Cuberite " BUILD_SERIES_NAME " (id: " BUILD_ID ")");
+	LOG("PlixMC " BUILD_SERIES_NAME " (id: " BUILD_ID ")");
 	LOG("from commit " BUILD_COMMIT_ID " built at: " BUILD_DATETIME);
 #endif
 

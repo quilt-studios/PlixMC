@@ -153,7 +153,7 @@ void cServer::PlayerDestroyed()
 
 bool cServer::InitServer(cSettingsRepositoryInterface & a_Settings, bool a_ShouldAuth)
 {
-	m_Description = a_Settings.GetValueSet("Server", "Description", "Cuberite - in C++!");
+	m_Description = a_Settings.GetValueSet("Server", "Description", "PlixMC - fast, extensible and ready to play!");
 	m_ShutdownMessage = a_Settings.GetValueSet("Server", "ShutdownMessage", "Server shutdown");
 	m_MaxPlayers = static_cast<size_t>(a_Settings.GetValueSetI("Server", "MaxPlayers", 100));
 	m_bIsHardcore = a_Settings.GetValueSetB("Server", "HardcoreEnabled", false);

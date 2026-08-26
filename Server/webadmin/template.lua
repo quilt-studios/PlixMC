@@ -11,28 +11,8 @@ end
 local function GetDefaultPage()
 	local PM = cRoot:Get():GetPluginManager()
 
-	local SubTitle = "Current Game"
-	local Content = ""
-
-	Content = Content .. "<h4>Plugins:</h4><ul>"
-	PM:ForEachPlugin(
-		function (a_CBPlugin)
-			if (a_CBPlugin:IsLoaded()) then
-				Content = Content ..  "<li>" .. a_CBPlugin:GetName() .. " (version " .. a_CBPlugin:GetVersion() .. ")</li>"
-			end
-		end
-	)
-
-	Content = Content .. "</ul>"
-	Content = Content .. "<h4>Players:</h4><ul>"
-
-	cRoot:Get():ForEachPlayer(
-		function(a_CBPlayer)
-			Content = Content .. "<li>" .. a_CBPlayer:GetName() .. "</li>"
-		end
-	)
-
-	Content = Content .. "</ul>";
+	local SubTitle = "Server overview"
+	local Content = "<p class='empty'>Open <strong>PlixCore → Dashboard</strong> for the live player list, console and scoreboard configuration.</p>"
 
 	return Content, SubTitle
 end
@@ -44,7 +24,7 @@ end
 function ShowPage(WebAdmin, TemplateRequest)
 	SiteContent = {}
 	local BaseURL = cWebAdmin:GetBaseURL(TemplateRequest.Request.Path)
-	local Title = "Cuberite WebAdmin"
+	local Title = "PlixMC Admin"
 	local NumPlayers = cRoot:Get():GetServer():GetNumPlayers()
 	local MemoryUsageKiB = cRoot:GetPhysicalRAMUsage()
 	local NumChunks = cRoot:Get():GetTotalChunkCount()
@@ -71,13 +51,13 @@ function ShowPage(WebAdmin, TemplateRequest)
 <body>
 <div class="header color-background">
 	<div class="wrapper">
-		<a href="]] .. BaseURL .. [[" class="logo">Cuberite</a>
+		<a href="]] .. BaseURL .. [[" class="logo">PlixMC</a>
 	</div>
 </div>
 <div class="panel">
 	<div class="wrapper">
 		<div class="welcome">
-			<strong>Welcome back, ]] .. TemplateRequest.Request.Username .. [[</strong>
+			<strong>PlixMC Control Center · ]] .. TemplateRequest.Request.Username .. [[</strong>
 			<a href="/" class="link-logout">Log out</a>
 		</div>
 		<ul class="stats">
@@ -150,12 +130,9 @@ function ShowPage(WebAdmin, TemplateRequest)
 <div class="footer">
 	<div class="footer-container">
 		<div class="wrapper">
-			<span class="copyright">Copyright © <a href="https://cuberite.org/" target="_blank">Cuberite Team</a></span>
+			<span class="copyright">PlixMC server administration</span>
 			<ul class="footer-links">
-				<li><a href="https://cuberite.org/" target="_blank">Cuberite</a></li>
-				<li><a href="https://forum.cuberite.org/" target="_blank">Forums</a></li>
-				<li><a href="https://api.cuberite.org/" target="_blank">API Docs</a></li>
-				<li><a href="https://book.cuberite.org/" target="_blank">User's Manual</a></li>
+				<li><a href="https://github.com/cuberite/cuberite" target="_blank">Engine credits</a></li>
 			</ul>
 		</div>
 	</div>
