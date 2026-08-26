@@ -1,9 +1,13 @@
-# Cuberite
+# PlixMC
 
 [![Jenkins Build Status](https://img.shields.io/jenkins/build?jobUrl=https%3A%2F%2Fbuilds.cuberite.org%2Fjob%2Fcuberite%2Fjob%2Fmaster&label=Jenkins)](https://builds.cuberite.org/job/cuberite/job/master/)
 [![AppVeyor Build Status](https://img.shields.io/appveyor/ci/cuberite/cuberite/master.svg?label=AppVeyor)](https://ci.appveyor.com/project/cuberite/cuberite)
 
-Cuberite is a Minecraft-compatible multiplayer game server that is written in C++ and designed to be efficient with memory and CPU, as well as having a flexible Lua Plugin API. Cuberite is compatible with the Java Edition Minecraft client.
+PlixMC is a Minecraft-compatible multiplayer game server based on the Cuberite engine. It is written in C++, designed to be efficient with memory and CPU, and includes a flexible Lua plugin API. PlixMC is compatible with the Java Edition Minecraft client.
+
+## PlixMC built-ins
+
+The bundled **PlixCore** plugin provides a lightweight, ready-to-use alternative to a basic plot plugin, an economy (`/balance`, `/pay`), starter crates (`/crate`), conservative movement checks, and a configurable player status template. Its WebAdmin dashboard shows online players and server metrics, provides an authenticated console command form, and lets administrators configure scoreboard placeholders such as `[Money]`, `[Rank]`, and `[deaths]`. Use `/servernameset <name>` to update the in-game server name.
 
 Cuberite runs on Windows, *nix and Android operating systems. This includes Android phones and tablets as well as Raspberry Pis; support for small embedded devices is experimental.
 
